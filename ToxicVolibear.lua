@@ -5,7 +5,7 @@ end
 local sprite = nil
 
 -- [ AutoUpdate ]
-local Version = 1
+local Version = 2
 do  
     local function AutoUpdate()
 		--console:clear()
