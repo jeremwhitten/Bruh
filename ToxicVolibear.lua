@@ -45,8 +45,27 @@ do
 			else
 				sprite = renderer:add_sprite("PoptartFolder/ToxicImage.png", 2000, 2000)
 			end	
+		end
+
+		if file_manager:directory_exists("PussyFolder") then
+			if not file_manager:file_exists("PussyFolder/PkMenu.png") then
+				local file_name = "PussyFolder/PkMenu.png"
+				local url = "https://raw.githubusercontent.com/Astraanator/test/main/Images/PkMenu.png"   	
+				http:download_file(url, file_name)
+			end	
 		end	
-		
+
+		if not file_manager:file_exists("Prediction.lib") then
+		   local file_name = "Prediction.lib"
+		   local url = "https://raw.githubusercontent.com/Ark223/Bruhwalker/main/Prediction.lib"
+		   http:download_file(url, file_name)
+		   console:log("ArkPred. download: Please reload via F5.....")
+		end		
+    end		
+    
+    AutoUpdate()
+	Check()
+end
 		
 require "PKDamageLib"
 pred:use_prediction()
