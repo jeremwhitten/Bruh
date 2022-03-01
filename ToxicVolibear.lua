@@ -158,7 +158,6 @@ local function MyHeroReady()
 end
 
 ToxicVolibear_category = menu:add_category_sprite("ToxicVolibear", "PoptartFolder/ToxicImage.png")
-ToxicVolibear = menu:add_category("ToxicVolibear")
 ToxicVolibear_enabled = menu:add_checkbox("Enabled",ToxicVolibear_category,1)
 ComboMenu = menu:add_subcategory("Combo Features", ToxicVolibear_category)
 Pcombo_combokey = menu:add_keybinder("Combo Key",ToxicVolibear_category,32)
