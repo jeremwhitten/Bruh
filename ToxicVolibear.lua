@@ -193,13 +193,13 @@ Pcombo = menu:add_subcategory("Combo Features", ComboMenu)
 	Pcombo_user = menu:add_checkbox("Use R", ComboMenu, 1)
 
 ---Clear---	
-Pclear = menu:add_subcategory("JungleClear Features", ToxicVolibear)
+Pclear = menu:add_subcategory("JungleClear Features", ToxicVolibear_category)
 	Pclear_useq = menu:add_checkbox("Use Q", Pclear, 1)
 	Pclear_usew = menu:add_checkbox("Use W", Pclear, 1)
 	Pclear_usee = menu:add_checkbox("Use E", Pclear, 1)
 	
 ---Drawings---
-PSpell_range = menu:add_subcategory("Drawing Features)", ToxicVolibear)
+PSpell_range = menu:add_subcategory("Drawing Features)", ToxicVolibear_category)
 	Pdraw_cd = menu:add_checkbox("Draw only if ready", PSpell_range, 1)
 	Pdraw_q = menu:add_checkbox("Draw Q range", PSpell_range, 0)	
 	Pdraw_e = menu:add_checkbox("Draw E range", PSpell_range, 0)
