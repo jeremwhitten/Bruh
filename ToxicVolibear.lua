@@ -45,15 +45,7 @@ do
 			else
 				sprite = renderer:add_sprite("PoptartFolder/ToxicImage.png", 2000, 2000)
 			end	
-		end
-
-		if file_manager:directory_exists("PussyFolder") then
-			if not file_manager:file_exists("PussyFolder/PkMenu.png") then
-				local file_name = "PussyFolder/PkMenu.png"
-				local url = "https://raw.githubusercontent.com/Astraanator/test/main/Images/PkMenu.png"   	
-				http:download_file(url, file_name)
-			end	
-		end	
+		end					
 
 		if not file_manager:file_exists("Prediction.lib") then
 		   local file_name = "Prediction.lib"
@@ -65,6 +57,11 @@ do
     
     AutoUpdate()
 	Check()
+end
+
+if not file_manager:file_exists("PoptartFolder/ToxicImage.png") then
+	console:log("Please reload via F5.....")
+	return
 end
 		
 require "PKDamageLib"
@@ -160,10 +157,11 @@ local function MyHeroReady()
 	return true
 end
 
+ToxicVolibear_category = menu:add_category_sprite("ToxicVolibear", "PoptartFolder/ToxicImage.png")
 ToxicVolibear = menu:add_category("ToxicVolibear")
-ToxicVolibear_enabled = menu:add_checkbox("Enabled",ToxicVolibear,1)
-ComboMenu = menu:add_subcategory("Combo Features", ToxicVolibear)
-Pcombo_combokey = menu:add_keybinder("Combo Key",ToxicVolibear,32)
+ToxicVolibear_enabled = menu:add_checkbox("Enabled",ToxicVolibear_category,1)
+ComboMenu = menu:add_subcategory("Combo Features", ToxicVolibear_category)
+Pcombo_combokey = menu:add_keybinder("Combo Key",ToxicVolibear_category,32)
 
 ---Prediction---
 Ppred = menu:add_subcategory("Prediction Features", ToxicVolibear)
