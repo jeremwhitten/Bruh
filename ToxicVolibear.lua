@@ -11,7 +11,7 @@ do
 		--console:clear()
 		local file_name = "ToxicVolibear.lua"
 		local url = "https://raw.githubusercontent.com/jeremwhitten/Bruh/main/ToxicVolibear.lua"        
-        local web_version = http:get(https://raw.githubusercontent.com/jeremwhitten/Bruh/main/ToxicVolibear.version")
+        local web_version = http:get("https://raw.githubusercontent.com/jeremwhitten/Bruh/main/ToxicVolibear.version")
         console:log("ToxicVolibear.Lua Vers: "..Version)
 		console:log("ToxicVolibear.Web Vers: "..tonumber(web_version))
 		if tonumber(web_version) == Version then
