@@ -184,13 +184,13 @@ Ppred = menu:add_subcategory("Prediction Features", ToxicVolibear_category)
 			r_speed = menu:add_slider("Speed >> Default = 20000 <<", Ppred_r, 19000, 21000, 20000)	
 
 ---Combo---
-Pcombo = menu:add_subcategory("Combo Features", ToxicVolibear_category)
-	Pcombo_useq = menu:add_checkbox("Use Q", Pcombo, 1)
-	Pcombo_usew = menu:add_checkbox("Use W", Pcombo, 1)
-	Pcombo_usee = menu:add_checkbox("Use E", Pcombo, 1)
-	Pcombo_user1 = menu:add_checkbox("Use R Enemy Count", Pcombo, 1)
-	Pcombo_rcount = menu:add_slider("Use R min Enemies", Pcombo, 1, 5, 2)
-	Pcombo_user = menu:add_checkbox("Use R", Pcombo, 1)
+Pcombo = menu:add_subcategory("Combo Features", ComboMenu)
+	Pcombo_useq = menu:add_checkbox("Use Q", ComboMenu, 1)
+	Pcombo_usew = menu:add_checkbox("Use W", ComboMenu, 1)
+	Pcombo_usee = menu:add_checkbox("Use E", ComboMenu, 1)
+	Pcombo_user1 = menu:add_checkbox("Use R Enemy Count", ComboMenu, 1)
+	Pcombo_rcount = menu:add_slider("Use R min Enemies", ComboMenu, 1, 5, 2)
+	Pcombo_user = menu:add_checkbox("Use R", ComboMenu, 1)
 
 ---Clear---	
 Pclear = menu:add_subcategory("JungleClear Features", ToxicVolibear)
