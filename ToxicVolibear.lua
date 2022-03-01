@@ -2,6 +2,52 @@ if game.local_player.champ_name ~= "Volibear" then
 	return
 end
 
+local sprite = nil
+
+-- [ AutoUpdate ]
+local Version = 1
+do  
+    local function AutoUpdate()
+		--console:clear()
+		local file_name = "ToxicVolibear.lua"
+		local url = "https://raw.githubusercontent.com/jeremwhitten/Bruh/main/ToxicVolibear.lua"        
+        local web_version = http:get(https://raw.githubusercontent.com/jeremwhitten/Bruh/main/ToxicVolibear.version")
+        console:log("ToxicVolibear.Lua Vers: "..Version)
+		console:log("ToxicVolibear.Web Vers: "..tonumber(web_version))
+		if tonumber(web_version) == Version then
+            console:log("ToxicVolibear successfully loaded.....")
+        else
+			http:download_file(url, file_name)
+            console:log("New ToxicVolibear Update available.....")
+			console:log("Please reload via F5.....")
+        end
+    
+    end
+	
+    local function Check()
+		if not file_manager:file_exists("PKDamageLib.lua") then
+			local file_name = "PKDamageLib.lua"
+			local url = "https://raw.githubusercontent.com/Astraanator/test/main/Champions/PKDamageLib.lua"   	
+			http:download_file(url, file_name)
+			console:log("PkDamageLib download: Please reload via F5.....")	
+			return
+		end
+
+		if not file_manager:directory_exists("PoptartFolder") then
+			file_manager:create_directory("PoptartFolder")
+		end
+
+		if file_manager:directory_exists("PoptartFolder") then
+			if not file_manager:file_exists("PoptartFolder/ToxicImage") then
+				local file_name = "PoptartFolder/ToxicImage.png"
+				local url = "https://raw.githubusercontent.com/jeremwhitten/Bruh/main/3.png"   	
+				http:download_file(url, file_name)
+			else
+				sprite = renderer:add_sprite("PoptartFolder/ToxicImage.png", 2000, 2000)
+			end	
+		end	
+		
+		
 require "PKDamageLib"
 pred:use_prediction()
 arkpred = _G.Prediction
